@@ -2,17 +2,17 @@ import WeatherCard from './WeatherCard';
 
 const SearchBox = ({ city, setCity, onCitySubmit }) => {
     return (
-        <div className='search-box relative'>
+        <div className='search-box relative w-full max-w-xs mx-auto'>
             <form onSubmit={onCitySubmit}>
                 <input
-                    className='px-3 py-2 mt-0.5 w-full rounded border-indigo-400 pe-10 shadow-sm sm:text-md'
+                    className='px-3 py-2 mt-0.5 w-full rounded border-indigo-400 pe-10 shadow-sm sm:text-md backdrop-blur-sm bg-white/70 focus:ring-2 focus:ring-indigo-400 border border-white/30 rounded-lg shadow-md transition'
                     id='Search'
                     type='text'
                     value={city}
                     placeholder='Search for a city...'
                     onChange={(e) => setCity(e.target.value)}
                 />
-                <span className='absolute inset-y-0 top-2 right-1 grid w-8 place-content-center'>
+                <span className='absolute inset-y-0 top-1 right-1 grid w-8 place-content-center'>
                     <button
                         type='submit'
                         aria-label='Submit'

@@ -3,6 +3,7 @@ import Loading from './components/Loading';
 import SearchBox from './components/SearchBox';
 import WeatherContainer from './components/WeatherContainer';
 import { useWeather } from './utils/useWeather';
+import { getBackgroundClass } from './utils/getBackgroundClass';
 
 const API = '10774089302b5d5c5b8ab7a395fabbd3';
 const lat = 37.9838;
@@ -29,6 +30,11 @@ export default function App() {
     const { city, setCity, weather, loading, error, fetchWeatherByCity } =
         useWeather(lat, lon, API);
 
+    const condition = weather?.weather?.[0]?.main;
+    const bgClass = condition ? getBackgroundClass(condition) : 'bg-gray-100';
+
+    // RENDER CASES
+    /* while loading */
     if (loading)
         return (
             <div className='min-h-screen flex flex-col gap-10 items-center justify-center bg-gray-100'>
@@ -36,6 +42,7 @@ export default function App() {
             </div>
         );
 
+    /* if error */
     if (error)
         return (
             <div className='min-h-screen flex flex-col gap-10 items-center justify-center bg-gray-100'>
@@ -43,9 +50,13 @@ export default function App() {
             </div>
         );
 
+    /* normal render */
     return (
         <div className='page-wrapper'>
-            <div className='min-h-screen flex flex-col gap-10 items-center justify-center bg-gray-100'>
+            <div
+                id='app-container'
+                className={`min-h-screen flex flex-col gap-10 items-center justify-center ${bgClass}`}
+            >
                 <SearchBox
                     onCitySubmit={handleCitySubmit}
                     city={city}
