@@ -9,6 +9,9 @@ export function getBackgroundClass(condition) {
         case 'Rain':
             return 'bg-rain';
 
+        case 'Drizzle':
+            return 'bg-light-rain';
+
         case 'Snow':
             return 'bg-snow';
 

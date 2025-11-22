@@ -1,35 +1,41 @@
 .bg-clear {
-    background: url('./src/weatherImages/weather-clear.jpg');
+    background: url('/weatherImages/weather-clear.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 .bg-clouds {
-    background: url('./src/weatherImages/weather-clouds.jpg');
+    background: url('/weatherImages/weather-clouds.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 .bg-rain {
-    background: url('./src/weatherImages/weather-rain.jpg');
+    background: url('/weatherImages/weather-rain.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-light-rain {
+    background: url('/weatherImages/weather-light-rain.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 .bg-snow {
-    background: url('./src/weatherImages/weather-snow.jpg');
+    background: url('/weatherImages/weather-snow.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 .bg-thunderstorm {
-    background: url('./src/weatherImages/weather-thunderstorm.jpg');
+    background: url('/weatherImages/weather-thunderstorm.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 .bg-fog {
-    background: url('./src/weatherImages/weather-fog.jpg');
+    background: url('/weatherImages/weather-fog.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
