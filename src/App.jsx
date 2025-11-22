@@ -1,3 +1,4 @@
+import Header from './components/Header';
 import ErrorMessage from './components/ErrorMessage';
 import Loading from './components/Loading';
 import SearchBox from './components/SearchBox';
@@ -46,6 +47,7 @@ export default function App() {
     if (error)
         return (
             <div className='min-h-screen flex flex-col gap-10 items-center justify-center bg-gray-100'>
+                <Header />
                 <ErrorMessage error={error} />
             </div>
         );
@@ -57,6 +59,7 @@ export default function App() {
                 id='app-container'
                 className={`min-h-screen flex flex-col gap-10 items-center justify-center ${bgClass}`}
             >
+                <Header />
                 <SearchBox
                     onCitySubmit={handleCitySubmit}
                     city={city}

@@ -39,7 +39,8 @@ export function useWeather(defaultLat, defaultLon, API) {
             }
             const data = await res.json();
             setWeather(data);
-            console.log(data);
+            // console.log(data);
+
             setError(false);
         } catch (err) {
             console.log('Error fetching weather', err);
