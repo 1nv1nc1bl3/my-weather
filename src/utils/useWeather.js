@@ -23,7 +23,6 @@ export function useWeather(defaultLat, defaultLon, API) {
             setLoading(true);
 
             const chosenCity = cityArg || city;
-
             if (!chosenCity) return;
 
             const res = await fetch(
@@ -70,6 +69,7 @@ export function useWeather(defaultLat, defaultLon, API) {
         fetchWeather();
     }, []);
 
+    // Send props to App.jsx
     return {
         city,
         setCity,
