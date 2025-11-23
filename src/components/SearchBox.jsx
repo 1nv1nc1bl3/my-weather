@@ -5,7 +5,7 @@ const SearchBox = ({ city, setCity, onCitySubmit }) => {
         <div className='search-box relative w-full max-w-xs mx-auto'>
             <form onSubmit={onCitySubmit}>
                 <input
-                    className='px-3 py-2 mt-0.5 w-full rounded border-indigo-400 pe-10 shadow-sm sm:text-md backdrop-blur-sm bg-white/70 focus:ring-2 focus:ring-indigo-400 border border-white/30 rounded-lg shadow-md transition'
+                    className='px-3 py-2 mt-0.5 w-full rounded pe-10 shadow-sm sm:text-md backdrop-blur-sm bg-white/60 focus:ring-2 focus:ring-indigo-400 border  rounded-lg transition'
                     id='Search'
                     type='text'
                     value={city}
