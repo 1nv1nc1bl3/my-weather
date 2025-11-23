@@ -7,12 +7,12 @@ export function useWeather(defaultLat, defaultLon, API) {
     const [error, setError] = useState(false);
     const [history, setHistory] = useState([]);
 
-    const addToHistory = (city) => {
-        if (!city) return;
-        const filtered = history.filter((item) => item !== city);
-        const newHistory = [city, ...filtered];
-        if (newHistory.length > 10) {
-            newHistory.splice(10);
+    const addToHistory = (cityName) => {
+        if (!cityName) return;
+        const filtered = history.filter((item) => item !== cityName);
+        const newHistory = [cityName, ...filtered];
+        if (newHistory.length > 8) {
+            newHistory.splice(8);
         }
         setHistory(newHistory);
     };
@@ -24,7 +24,7 @@ export function useWeather(defaultLat, defaultLon, API) {
 
             const chosenCity = cityArg || city;
 
-            if (!cityArg) return;
+            if (!chosenCity) return;
 
             const res = await fetch(
                 `https://api.openweathermap.org/data/2.5/weather?q=${chosenCity}&appid=${API}&units=metric`
@@ -36,7 +36,7 @@ export function useWeather(defaultLat, defaultLon, API) {
             }
             const data = await res.json();
             setWeather(data);
-            addToHistory(city);
+            addToHistory(chosenCity);
             setError(false);
         } catch (err) {
             console.log('Error fetching weather', err);
