@@ -66,16 +66,16 @@ export default function App() {
         <div className='page-wrapper'>
             <div
                 id='app-container'
-                className={`min-h-screen flex flex-col gap-5 items-center justify-center ${bgClass}`}
+                className={`min-h-screen flex flex-col gap-2 md:gap-5 items-center justify-center ${bgClass}`}
             >
-                <div className='header-section flex flex-col items-center justify-center relative rounded-full  bg-white/60 w-55 h-55'>
+                <div className='header-section flex flex-col items-center justify-center relative rounded-full  bg-white/60 w-40 h-40 lg:w-55 lg:h-55'>
                     <Header />
                 </div>
-                <div className='boxes-section flex flex-row justify-stretch gap-5'>
+                <div className='boxes-section flex flex-col md:flex-row lg:flex-row justify-stretch gap-2 md:gap-5'>
                     <div className='flex flex-col'>
                         <WeatherContainer weather={weather} theDate={theDate} />
                     </div>
-                    <div className='flex flex-col gap-5'>
+                    <div className='flex flex-col gap-2 md:gap-5'>
                         <SearchBox
                             onCitySubmit={handleCitySubmit}
                             city={city}
